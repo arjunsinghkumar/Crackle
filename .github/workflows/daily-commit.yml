@@ -1,0 +1,24 @@
+name: Daily Contribution
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # every day at midnight UTC
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update contribution file
+        run: |
+          echo "Last update: $(date -u)" > contribution.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add contribution.md
+          git commit -m "Daily contribution: $(date -u)" || exit 0
+          git push 
