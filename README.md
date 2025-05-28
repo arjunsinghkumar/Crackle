@@ -1,6 +1,4 @@
-# Crackle - Bluetooth Speaker Quality Analyzer
-
-Crackle is an iOS/macOS application designed to detect and analyze audio distortion in Bluetooth speakers. It helps users identify and diagnose audio quality issues by comparing reference signals with the actual output from Bluetooth speakers.
+# Crackle 
 
 ## Features
 
